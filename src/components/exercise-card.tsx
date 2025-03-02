@@ -76,7 +76,7 @@ export default function ExerciseCard({
 
       {feedback === 'incorrect' && (
         <div className="mb-6 p-4 bg-red-100 text-red-800 rounded-lg">
-          틀렸습니다. 정답은 "{exercise.correctAnswer}" 입니다.
+          틀렸습니다. 정답은 &quot;{exercise.correctAnswer}&quot; 입니다.
         </div>
       )}
 
