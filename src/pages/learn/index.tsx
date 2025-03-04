@@ -15,7 +15,7 @@ export default function LearnPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center mb-8">언어 배우기</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">Learn a Language</h1>
 
       <LanguageSelector />
 

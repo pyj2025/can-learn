@@ -63,20 +63,20 @@ export default function ExerciseCard({
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-            placeholder="번역을 입력하세요"
+            placeholder="Enter your translation"
           />
         </div>
       )}
 
       {feedback === 'correct' && (
         <div className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg">
-          정답입니다! 🎉
+          Correct 🎉
         </div>
       )}
 
       {feedback === 'incorrect' && (
         <div className="mb-6 p-4 bg-red-100 text-red-800 rounded-lg">
-          틀렸습니다. 정답은 &quot;{exercise.correctAnswer}&quot; 입니다.
+          Wrong. The correct answer is &quot;{exercise.correctAnswer}&quot;.
         </div>
       )}
 
@@ -89,7 +89,7 @@ export default function ExerciseCard({
         onClick={handleSubmit}
         disabled={!answer}
       >
-        확인
+        Submit
       </button>
     </div>
   );
