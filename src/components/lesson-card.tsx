@@ -21,10 +21,10 @@ export default function LessonCard({ lesson, userLanguage }: LessonCardProps) {
 
         <div className="flex justify-between items-center">
           <span className="text-sm font-medium px-3 py-1 rounded-full bg-gray-200">
-            레벨 {lesson.level}
+            Level {lesson.level}
           </span>
 
-          {isCompleted && <span className="text-green-500">✓ 완료</span>}
+          {isCompleted && <span className="text-green-500">✓ Completed</span>}
         </div>
       </div>
     </Link>
