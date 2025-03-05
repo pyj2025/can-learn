@@ -1,29 +1,32 @@
+import Image from 'next/image';
 import { useStore } from '../../store/useStore';
-import LanguageSelector from '../../components/language-selector';
-import LessonCard from '../../components/lesson-card';
 
 export default function LearnPage() {
-  const { lessons, currentLanguage, user } = useStore();
+  const { lessons, currentLanguage } = useStore();
 
   const languageLessons = lessons.filter(
     (lesson) => lesson.languageId === currentLanguage
   );
 
-  const userLanguage = user.languages.find(
-    (lang) => lang.languageId === currentLanguage
-  );
-
   return (
     <div className="container mx-auto px-4 py-12">
-      <LanguageSelector />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {languageLessons.map((lesson) => (
-          <LessonCard
+          <div
             key={lesson.id}
-            lesson={lesson}
-            userLanguage={userLanguage}
-          />
+            className="bg-white p-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+          >
+            <Image
+              src="/images/image-test.png"
+              alt="Lesson image"
+              width={600}
+              height={600}
+              className="w-full h-40 object-cover rounded-lg"
+            />
+            <h3 className="text-lg font-bold text-center mt-3">
+              {lesson.title}
+            </h3>
+          </div>
         ))}
       </div>
     </div>
